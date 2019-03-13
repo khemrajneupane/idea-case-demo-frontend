@@ -40,7 +40,7 @@ export default function categoriess(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        categoryist: [...state.categoryist, action.categoryist]
+        //categoryist: [...state.categoryist, action.categoryist]
       };
     case ActionTypes.CATEGORY_ADD_X:
       return {
@@ -74,22 +74,15 @@ export default function categoriess(state = initialState, action) {
         isLoading: true
       };
     case ActionTypes.CATEGORIES_FILTER_BY_BUDGET_LIMIT_FILTER_OK:
-    const originalList = state.categoryist;
-          const filteredList = state.selectedIds;
-          var filteredListArray = [];
-          for( var i = 0; i < originalList.length; i++){
-              for(var j = 0; j < filteredList.length; j++){
-                if(originalList[i].id === filteredList[j]){
-                    filteredListArray.push(originalList[i]);
-                  }
-              }
-             
-          }
+    
+        
+          
           
     return {
       ...state,
       isLoading: false,
-      categoryist:[...state.categoryist,filteredListArray]
+      selectedIds : action.selectedIds
+      
       
     };
     case ActionTypes.CATEGORIES_FILTER_BY_BUDGET_LIMIT_FILTER_X:

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addCategory } from "../../actions/category";
-
+import { Button } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 class AddCategory extends Component {
   constructor(props) {
     super(props);
@@ -37,9 +38,9 @@ class AddCategory extends Component {
           <label>Budget: </label>
           <input type="number" name="budget" onChange={this.inputChanged} />
         </form>
-        <button type="button" onClick={this.buttonPressed}>
+        <Button type="button" onClick={this.buttonPressed}>
           SAVE
-        </button>
+        </Button>
       </div>
     );
   }

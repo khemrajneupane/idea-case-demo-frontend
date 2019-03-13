@@ -14,27 +14,40 @@ class CategoryListFilteredBudget extends Component {
         this.props.deleteRequest(id);
           
       };
-      /*categoriesFilteredForBudgetLimit = () =>{
+      categoriesFilteredForBudgetLimit = () => {
+
         const originalList = this.props.categoriess.categoryist;
+    
         const filteredList = this.props.categoriess.selectedIds;
+    
         var filteredListArray = [];
-        for( var i = 0; i < originalList.length; i++){
-            for(var j = 0; j < filteredList.length; j++){
-              if(originalList[i].id === filteredList[j]){
-                  filteredListArray.push(originalList[i]);
-                }
+    
+        for (var i = 0; i < originalList.length; i++) {
+    
+          for (var j = 0; j < filteredList.length; j++) {
+    
+            if (originalList[i].id === filteredList[j]) {
+    
+              filteredListArray.push(originalList[i]);
+    
             }
-           
+    
+          }
+    
+    
         }
-      }*/
+        return filteredListArray;
+    
+      }
+      
       render() {
         return (
           <div>
-            <h4>List of Categories</h4>
+            <h4>List of Expensive Categories</h4>
             <ol>
-              {this.props.categoriess.categoryist.map((item) => (
+              {this.categoriesFilteredForBudgetLimit().map((item,index) => (
                 <CategoryListItem
-                  key={item.id}
+                  key={index}
                   item={item}
                   itemDeleted={this.itemDeleted}
                 />

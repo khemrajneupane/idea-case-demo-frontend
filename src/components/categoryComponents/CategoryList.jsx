@@ -29,9 +29,9 @@ class CategoryList extends Component {
       <div>
         <h4>List of Categories</h4>
         <ol>
-          {this.props.categoriess.categoryist.map((item) => (
+          {this.props.categoriess.categoryist.map((item,index) => (
             <CategoryListItem
-              key={item.id}
+              key={index}
               item={item}
               itemDeleted={this.itemDeleted}
             />

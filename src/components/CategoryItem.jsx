@@ -17,7 +17,7 @@ class CategoryItem extends Component {
       <span>
         {`Id: ${this.props.item.id}, Category: ${this.props.item.name}, budget: ${
           this.props.item.budget
-        } euros`}
+        } euros`  }{" "}
       </span>
     );
   }

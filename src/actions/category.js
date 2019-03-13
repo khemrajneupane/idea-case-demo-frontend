@@ -62,18 +62,21 @@ export function addCategory(category) {
     const ajaxRequest = {
       method:'post',
       url: API_ROOT + '/addCategory',
-      data: {
+      data : category,
+      /*data: {
         id : Number(category.id),
         name : category.name,
         budget : Number(category.budget)
-      }
+      }*/
     };
     axios(ajaxRequest)
     .then((response)=>{
-      dispatch(categoriesAdd_OK(response.data));
+      dispatch(fetchAllCategories());
+      dispatch(categoriesAdd_OK());
+      //dispatch(categoriesAdd_OK(response.data));
     })
       .catch((error)=>{
-        //console.log("Error : "+ error);
+        console.log("Error : "+ error);
         dispatch(categoriesAdd_X());
     })
     .then(()=>{
