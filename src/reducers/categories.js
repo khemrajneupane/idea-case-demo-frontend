@@ -56,9 +56,8 @@ export default function categoriess(state = initialState, action) {
     case ActionTypes.CATEGORY_DELETE_OK:
       return {
         ...state,
-        categoryist: 
-          state.categoryist.filter((item) => item.id !== action.id
-          ),
+        /*categoryist: 
+         state.categoryist.filter((item) => item.id !== action.id),*/
           isLoading:false,
         
       };
@@ -74,17 +73,13 @@ export default function categoriess(state = initialState, action) {
         isLoading: true
       };
     case ActionTypes.CATEGORIES_FILTER_BY_BUDGET_LIMIT_FILTER_OK:
-    
+      return {
+        ...state,
+        isLoading: false,
+        selectedIds : action.selectedIds
         
-          
-          
-    return {
-      ...state,
-      isLoading: false,
-      selectedIds : action.selectedIds
-      
-      
-    };
+        
+      };
     case ActionTypes.CATEGORIES_FILTER_BY_BUDGET_LIMIT_FILTER_X:
       return {
         ...state,

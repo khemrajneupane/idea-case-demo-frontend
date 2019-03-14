@@ -25,6 +25,14 @@ class AddCategory extends Component {
   buttonPressed = () => {
     const category = this.state.newAddCategory;
     this.props.addLocalCategory(category);
+    //to reset fields to empty
+    this.setState({
+      newAddCategory: {
+        id: "",
+        name: "",
+        budget: ""
+      }
+    });
   };
 
   render() {
@@ -32,11 +40,11 @@ class AddCategory extends Component {
       <div>
         <form>
           <label>Id: </label>
-          <input type="number" name="id" onChange={this.inputChanged} />
+          <input type="number" name="id" onChange={this.inputChanged} value={this.state.newAddCategory.id}/>
           <label>Name: </label>
-          <input type="text" name="name" onChange={this.inputChanged} />
+          <input type="text" name="name" onChange={this.inputChanged}  value={this.state.newAddCategory.name}/>
           <label>Budget: </label>
-          <input type="number" name="budget" onChange={this.inputChanged} />
+          <input type="number" name="budget" onChange={this.inputChanged}  value={this.state.newAddCategory.budget}/>
         </form>
         <Button type="button" onClick={this.buttonPressed}>
           SAVE

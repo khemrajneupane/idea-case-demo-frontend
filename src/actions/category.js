@@ -71,8 +71,8 @@ export function addCategory(category) {
     };
     axios(ajaxRequest)
     .then((response)=>{
-      dispatch(fetchAllCategories());
       dispatch(categoriesAdd_OK());
+      dispatch(fetchAllCategories());
       //dispatch(categoriesAdd_OK(response.data));
     })
       .catch((error)=>{
@@ -124,8 +124,9 @@ export function deleteCategory(thisId) {
       }
     };
    axios(ajaxRequest)
-   .then(()=>{
+   .then((response)=>{
     dispatch(categoryDelete_OK());
+    dispatch(fetchAllCategories());
     
    })
    .catch((error)=>{
