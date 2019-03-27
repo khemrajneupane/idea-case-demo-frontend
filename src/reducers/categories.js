@@ -86,7 +86,8 @@ export default function categoriess(state = initialState, action) {
         isLoading: false
       };
       
-    //case null:return state;
+    case null:
+      return state;
     default:
       return state;
   }

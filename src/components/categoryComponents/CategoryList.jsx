@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAllCategories, deleteCategory } from "../../actions/category";
 import CategoryListItem from "./CategoryListItem";
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 //This CategoryList gets (mounts) all the object instances called in FetchTestCategories function
 //later, it puts them in an unordered list.
@@ -26,9 +27,9 @@ class CategoryList extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="list-group">
         <h4>List of Categories</h4>
-        <ol>
+        <ol className="list-group-item">
           {this.props.categoriess.categoryist.map((item,index) => (
             <CategoryListItem
               key={index}
